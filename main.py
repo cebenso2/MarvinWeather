@@ -19,8 +19,11 @@ def process_weather_data():
     gmail = create_gmail_service()
     user_data = get_user_data(gmail)
     for data in user_data:
+        print(data)
         lat, log = data['lat'],data['long']
+        print(lat,log)
         forecast = get_weather_forecast(lat,log)
+        print(forecast)
         location = reverse_geocode(lat, log)
         send_weather_data(data['sender_id'], location, forecast)
 
