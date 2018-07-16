@@ -19,7 +19,7 @@ def reverse_geocode(lat, log):
             state = c['short_name']
         if "locality" in c['types']:
             town = c['long_name']
-    return town, state, country
+    return "{}, {}, {}".format(town,state,country)
 
 if __name__ == "__main__":
     #latitude = 42.4851

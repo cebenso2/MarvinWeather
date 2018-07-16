@@ -26,6 +26,12 @@ def display_forecast(forecast):
     for f in forecast:
         print(format_time(f['time']),f['status'])
 
+def format_forecast(forecast):
+    str_forecast = ""
+    for f in forecast:
+        str_forecast += format_time(f['time']) +": "+f['status'] +"\n"
+    return str_forecast
+
 if __name__ == "__main__":
     forecast = get_weather_forecast(42.4851,-71.4328)
     display_forecast(forecast)
